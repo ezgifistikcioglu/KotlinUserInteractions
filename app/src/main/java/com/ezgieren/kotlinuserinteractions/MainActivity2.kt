@@ -1,9 +1,11 @@
 package com.ezgieren.kotlinuserinteractions
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.CompoundButton
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.ezgieren.kotlinuserinteractions.databinding.Screen1Binding
 
@@ -64,5 +66,20 @@ class MainActivity2 : AppCompatActivity() {
     // CheckBox
     var chckBoxOnCheckedChange = CompoundButton.OnCheckedChangeListener{button: CompoundButton, isChecked: Boolean ->
         Toast.makeText(this, "CheckBox Status: $isChecked", Toast.LENGTH_LONG).show()
+    }
+
+    fun alertShow(view: View) {
+        var alertCreate = AlertDialog.Builder(this)
+        alertCreate.setTitle("Alert title")
+        alertCreate.setMessage("Alert Message")
+
+        alertCreate.setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
+            Toast.makeText(this, "Clicked Yes Button", Toast.LENGTH_LONG).show()
+            //finish() if you want to leave from the app, you can use this func.
+        })
+        alertCreate.setNegativeButton("No", null)
+
+        alertCreate.create().show()
+
     }
 }
