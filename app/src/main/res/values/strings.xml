@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinUserInteractions</string>
+    <string name="text">Text Description</string>
 </resources>
