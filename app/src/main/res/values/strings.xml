@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">KotlinUserInteractions</string>
-    <string name="text">Text Description</string>
+    <string name="app_name" translatable="false">KotlinUserInteractions</string>
+    <string name="text" translatable="false">Text Description</string>
 </resources>

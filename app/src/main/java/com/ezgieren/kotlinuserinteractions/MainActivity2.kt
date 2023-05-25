@@ -1,10 +1,14 @@
 package com.ezgieren.kotlinuserinteractions
 
+import android.app.Activity
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.CompoundButton
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.ezgieren.kotlinuserinteractions.databinding.Screen1Binding
@@ -15,6 +19,7 @@ class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = Screen1Binding.inflate(layoutInflater)
+        //val view = binding.root
         setContentView(binding.root)
 
         binding.textViewText.text = getString(R.string.text)
@@ -80,6 +85,16 @@ class MainActivity2 : AppCompatActivity() {
         alertCreate.setNegativeButton("No", null)
 
         alertCreate.create().show()
+    }
 
+    fun openNewScreen(view: View) {
+        startForResult.launch(Intent(this, MainActivity3::class.java))
+    }
+    var startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            result: ActivityResult ->
+        if (result.resultCode == Activity.RESULT_CANCELED) {
+            val intent = result.data
+            Toast.makeText(this, "Came back to the screen: $intent", Toast.LENGTH_LONG).show()
+        }
     }
 }

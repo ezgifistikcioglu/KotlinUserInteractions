@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity3">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="64dp"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/resTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNum2">
+
+        <Button
+            android:id="@+id/additionButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:insetRight="5dp"
+            android:onClick="add"
+            android:text="+"
+            app:toggleCheckedStateOnClick="false" />
+
+        <Button
+            android:id="@+id/subtractionButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:insetRight="5dp"
+            android:onClick="sub"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/multiplicationButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:insetRight="5dp"
+            android:onClick="multiply"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/divisionButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="division"
+            android:text="/" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextNum1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="Number 1"
+        app:layout_constraintBottom_toTopOf="@+id/editTextNum2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextNum2"
+        android:layout_width="214dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="Number 2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNum1"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/resTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="173dp"
+        android:text="Result:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
