@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name" translatable="false">KotlinUserInteractions</string>
     <string name="text" translatable="false">Text Description</string>
+    <string name="packageName" translatable="false">com.ezgieren.kotlinuserinteractions</string>
 </resources>
