@@ -42,7 +42,7 @@ class MainActivity2 : AppCompatActivity() {
         binding.switchBtn.setOnCheckedChangeListener(switchBtnOnCheckedChange)
 
         // CheckBox Using
-        binding.checkBox.setOnCheckedChangeListener(chckBoxOnCheckedChange)
+        binding.checkBox.setOnCheckedChangeListener(checkBoxOnCheckedChange)
     }
 
 
@@ -69,12 +69,12 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     // CheckBox
-    var chckBoxOnCheckedChange = CompoundButton.OnCheckedChangeListener{button: CompoundButton, isChecked: Boolean ->
+    private var checkBoxOnCheckedChange = CompoundButton.OnCheckedChangeListener{ button: CompoundButton, isChecked: Boolean ->
         Toast.makeText(this, "CheckBox Status: $isChecked", Toast.LENGTH_LONG).show()
     }
 
     fun alertShow(view: View) {
-        var alertCreate = AlertDialog.Builder(this)
+        val alertCreate = AlertDialog.Builder(this)
         alertCreate.setTitle("Alert title")
         alertCreate.setMessage("Alert Message")
 
